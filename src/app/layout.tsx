@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import NextThemeProvider from "@/providers/NextThemeProvider";
 
-const geistSans = Geist({
+const roboto = Roboto({
+  subsets: ["latin"],
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -23,11 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${roboto.className} antialiased`}>
+        <NextThemeProvider>{children}</NextThemeProvider>
       </body>
     </html>
   );
