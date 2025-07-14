@@ -1,5 +1,22 @@
 export enum Routes {
   Root = "/",
+  Auth = "auth",
+  Dashboard = "dashboard",
+  Profile = "profile",
+}
+
+export enum Pages {
+  Login = "login",
+  Register = "register",
+  ForgotPassword = "forgot-password",
+  ResetPassword = "reset-password",
+  ChangePassword = "change-password",
+  VerifyEmail = "verify-email",
+
+  Orders = "orders",
+  Security = "security",
+  MyProducts = "my-products",
+  AllUsers = "users",
 }
 
 export enum FormPagesType {
